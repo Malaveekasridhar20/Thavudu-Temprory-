@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.zoom-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+/* Background image & picture wrapper */
+.bg-picture {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+#mainBgImg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  filter: blur(2.5px);
+  transform: none;
+}
+
+/* ==========================================================================
+   DESKTOP CHALKBOARD CONTENT
+   ========================================================================== */
+.blackboard-content {
+  position: absolute;
+  top: 7%;
+  left: 34.5%;
+  width: 50%;
+  height: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 10px;
+}
+
+.board-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+/* Logo without highlight aura */
+.tct-logo {
+  height: min(120px, 13.5vh);
+  max-width: 85%;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.board-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Line 1: WEBSITE IS UNDER DEVELOPMENT (Primary White) */
+.first-line {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
+  font-size: clamp(1.3rem, 2.35vw, 2.25rem) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.95),
+    0 0 10px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Line 2: THAVUDU CHARITABLE TRUST (Secondary Yellow) */
+.second-line {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
+  font-size: clamp(1.1rem, 1.85vw, 1.75rem) !important;
+  font-weight: 800 !important;
+  color: #fde047 !important;
+  text-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.95),
+    0 0 10px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   TABLET & PAD DEVICES (769px - 1024px)
+   Increased logo size for tablets
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tct-logo {
+    height: min(145px, 16.5vh);
+    max-width: 88%;
+  }
+
+  .blackboard-content {
+    top: 6.5%;
+    height: 39%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE DEVICES (max-width: 768px)
+   Zooms in on the chalkboard without cutting off any part of the board
+   Increased logo size for mobile
+   ========================================================================== */
+@media (max-width: 768px) {
+  .zoom-container {
+    transform-origin: 58.5% 37.5%;
+    transform: scale(1.52);
+  }
+
+  .blackboard-content {
+    top: 28.5%;
+    left: 33.5%;
+    width: 55%;
+    height: 17.5%;
+    padding: 0 4px;
+  }
+
+  .board-logo-wrap {
+    margin-bottom: 4px;
+  }
+
+  /* Increased logo size on mobile */
+  .tct-logo {
+    height: min(65px, 7.6vh);
+    max-width: 85%;
+  }
+
+  .board-text-wrap {
+    gap: 3.5px;
+  }
+
+  .first-line {
+    font-size: clamp(0.48rem, 1.85vw, 0.63rem) !important;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .second-line {
+    font-size: clamp(0.42rem, 1.6vw, 0.54rem) !important;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+}
+
+/* Small mobile screens (<= 380px) */
+@media (max-width: 380px) {
+  .zoom-container {
+    transform-origin: 58.5% 37.5%;
+    transform: scale(1.55);
+  }
+
+  .blackboard-content {
+    top: 28.5%;
+    left: 33%;
+    width: 56%;
+  }
+
+  .tct-logo {
+    height: min(56px, 6.8vh);
+  }
+
+  .first-line {
+    font-size: 0.50rem !important;
+    letter-spacing: 0.02em;
+  }
+
+  .second-line {
+    font-size: 0.42rem !important;
+    letter-spacing: 0.03em;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Thavudu Charitable Trust - Website Under Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/tct-logo.png">
+  <link rel="apple-touch-icon" href="assets/tct-logo.png">
+  <link rel="stylesheet" href="style.css?v=19">
+</head>
+<body>
+  <div class="image-wrapper">
+    <div class="zoom-container" id="zoomContainer">
+      <picture class="bg-picture">
+        <!-- Mobile view uses the vertical image -->
+        <source media="(max-width: 768px)" srcset="assets/classroom-mob-bg.png">
+        <!-- Desktop uses the wide image -->
+        <img 
+          id="mainBgImg"
+          src="assets/classroom-bg.png" 
+          alt="Sunlit Classroom with Teacher and Students"
+        />
+      </picture>
+      
+      <!-- Chalkboard Message & Logo Overlay -->
+      <div class="blackboard-content" id="blackboardContent">
+        <div class="board-logo-wrap">
+          <img src="assets/tct-logo.png" alt="Thavudu Charitable Trust Logo" class="tct-logo" />
+        </div>
+        <div class="board-text-wrap">
+          <p class="first-line">WEBSITE IS UNDER DEVELOPMENT</p>
+          <h1 class="second-line">THAVUDU CHARITABLE TRUST</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
